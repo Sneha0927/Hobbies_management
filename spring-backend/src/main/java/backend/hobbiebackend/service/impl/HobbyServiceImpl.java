@@ -48,7 +48,7 @@ public class HobbyServiceImpl implements HobbyService {
 
     @SneakyThrows
     @Override
-    public void saveUpdatedHobby(Hobby hobby) {
+    public void saveUpdatedHobby(Hobby hobby) throws Exception {
         Optional<Hobby> byId = this.hobbyRepository.findById(hobby.getId());
         if (byId.isPresent()) {
             deleteResourcesById(byId.get());
